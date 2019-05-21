@@ -1,0 +1,291 @@
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+	<title>Gerador de Currículos</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+	<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+	<header>
+		<h1>Gerador de Currículo</h1>
+	</header>
+
+	<section id="curriculo">
+		<form id="novoCurriculo" method="POST" action="gerar-curriculo.php" target="_blank">
+			<div class="bloco">
+				<div class="container">
+					<div class="row">
+						<div class="col-12 titulo">
+							<h2>Dados pessoais e contato</h2>
+						</div>
+						<div class="col-12">
+							<div class="form-group">
+								<label>Seu nome completo *</label>
+								<input type="text" name="nome" class="form-control" minlength="2" maxlength="200"
+									placeholder="Nome completo" required>
+							</div>
+
+							<div class="form-group">
+								<label>Principal função</label>
+								<input type="text" name="principal_funcao" class="form-control" minlength="2"
+									maxlength="200" placeholder="Sua principal função">
+							</div>
+						</div>
+						<div class="col-12 col-md-6">
+							<div class="form-group">
+								<label>Cidade - Estado *</label>
+								<input type="text" name="endereco" class="form-control" minlength="2" maxlength="200"
+									placeholder="Por exemplo (São Paulo - SP)" required>
+							</div>
+						</div>
+						<div class="col-12 col-md-6">
+							<div class="form-group">
+								<label>Telefone *</label>
+								<input type="text" id="telefone" name="tel" class="form-control" minlength="10"
+									maxlength="15" placeholder="(XX) XXXXX-XXXX" required>
+							</div>
+						</div>
+						<div class="col-12 col-md-6">
+							<div class="form-group">
+								<label>E-mail *</label>
+								<input type="email" name="email" class="form-control" minlength="5" maxlength="200"
+									placeholder="E-mail para contato" required>
+							</div>
+						</div>
+						<div class="col-12 col-md-6">
+							<div class="form-group">
+								<label>Link para seu GitHub</label>
+								<input type="text" name="github" class="form-control" minlength="5" maxlength="200"
+									placeholder="Link para seu GitHub">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="bloco bloco-alternado">
+				<div class="container">
+					<div class="row">
+						<div class="col-12 titulo">
+							<h2>Idiomas</h2>
+						</div>
+					</div>
+					<div class="idiomas">
+						<div class="row idioma">
+							<div class="col-12 col-md-6">
+								<div class="form-group">
+									<label>Idioma</label>
+									<input type="text" name="idioma[]" class="form-control" minlength="1"
+										maxlength="200" placeholder="Qual idioma você sabe?">
+								</div>
+							</div>
+							<div class="col-12 col-md-6">
+								<div class="form-group">
+									<label>Nível de fluência</label>
+									<select name="nivel_idioma[]" class="form-control">
+										<option value="">Qual o nível?</option>
+										<option value="Iniciante">Iniciante</option>
+										<option value="Intermediário">Intermediário</option>
+										<option value="Avançado">Avançado</option>
+										<option value="Fluente">Fluente</option>
+									</select>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="row justify-content-center text-center mt-3">
+						<a class="btn btn-primary" onclick="addCampo('idioma')">Adicionar Idioma</a>
+					</div>
+				</div>
+			</div>
+
+			<div class="bloco">
+				<div class="container">
+					<div class="row">
+						<div class="col-12 titulo">
+							<h2>Formação e conhecimentos</h2>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-12">
+							<div class="form-group">
+								<label>Formação *</label>
+								<input type="text" name="formacao" class="form-control" minlength="1" maxlength="200"
+									placeholder="Sua formação acadêmica" required>
+							</div>
+						</div>
+					</div>
+
+					<div class="row mt-3">
+						<div class="col-12 titulo">
+							<h2>Cursos</h2>
+						</div>
+					</div>
+					<div class="cursos">
+						<div class="row curso">
+							<div class="col-12 col-md-8">
+								<div class="form-group">
+									<label>Curso</label>
+									<input type="text" name="curso[]" class="form-control" minlength="5" maxlength="200"
+										placeholder="Nome do seu curso">
+								</div>
+							</div>
+							<div class="col-12 col-md-4">
+								<div class="form-group">
+									<label>Onde você cursou</label>
+									<input type="text" name="local_curso[]" class="form-control" minlength="2"
+										maxlength="200" placeholder="Instituição em que o cursou">
+								</div>
+							</div>
+
+						</div>
+					</div>
+					<div class="row justify-content-center text-center mt-3">
+						<a class="btn btn-primary" onclick="addCampo('curso')">Adicionar Curso</a>
+					</div>
+
+					<div class="row">
+						<div class="col-12">
+							<div class="form-group">
+								<div class="form-group">
+									<label>Resuma seus conhecimentos *</label>
+									<textarea name="conhecimentos" class="form-control" cols="30" rows="5"
+										placeholder="Escreva de forma resumida os conhecimentos que possui" required></textarea>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="bloco bloco-alternado">
+				<div class="container">
+					<div class="row">
+						<div class="col-12 mb-3">
+							<h2 class="mb-0">Experiência profissional</h2>
+							<small>Da mais recente para a mais antiga</small>
+						</div>
+					</div>
+					<div class="experiencias">
+						<div class="experiencia">
+							<div class="row">
+								<div class="col-12 col-md-6">
+									<div class="form-group">
+										<label>Nome da empresa</label>
+										<input type="text" name="empresa[]" class="form-control" minlength="2"
+											maxlength="200" placeholder="Empresa onde trabalhou ou trabalha">
+									</div>
+								</div>
+								<div class="col-12 col-md-6">
+									<div class="form-group">
+										<label>Função</label>
+										<input type="text" name="funcao[]" class="form-control" minlength="2"
+											maxlength="200" placeholder="Função que desempenhou">
+									</div>
+								</div>
+								<div class="col-12 col-md-4">
+									<div class="form-group">
+										<label>Data de início</label>
+										<input type="text" name="mes_entrada[]" class="form-control data-exp"
+											placeholder="MM/AAAA">
+									</div>
+								</div>
+								<div class="col-12 col-md-4">
+									<div class="form-group">
+										<label>Data de saída</label>
+										<input type="text" name="mes_saida[]" class="form-control data-exp"
+											placeholder="MM/AAAA">
+									</div>
+								</div>
+								<div class="col-12 col-md-4 d-flex align-items-center">
+									<div class="form-check form-check-inline">
+										<label>
+											<input class="form-check-input trabalho-atual" name="trabalho_atual[]"
+												type="checkbox" value="true">
+											Trabalho aqui
+											atualmente</label>
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-12">
+									<div class="form-group">
+										<textarea name="descricao_exp[]" class="form-control" cols="30" rows="5"
+											placeholder="Descrição de suas funções"></textarea>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="row justify-content-center text-center mt-3">
+						<a class="btn btn-primary" onclick="addCampo('experiencia')">Adicionar Experiência</a>
+					</div>
+				</div>
+			</div>
+
+			<div class="bloco">
+				<div class="container bg-alternado">
+					<div class="row">
+						<div class="col-12">
+							<h2>Projetos</h2>
+						</div>
+					</div>
+					<div class="projetos">
+						<div class="projeto">
+							<div class="row">
+								<div class="col-12">
+									<div class="form-group">
+										<label>Projeto</label>
+										<input type="text" name="projeto[]" class="form-control" minlength="2"
+											maxlength="200" placeholder="O que é o seu projeto?">
+									</div>
+								</div>
+								<div class="col-12">
+									<div class="form-group">
+										<label>Link para o projeto</label>
+										<input type="url" name="url_projeto[]" class="form-control" minlength="2"
+											maxlength="200" placeholder="URL para o seu projeto">
+									</div>
+								</div>
+								<div class="col-12">
+									<div class="form-group">
+										<label>O que é o seu projeto?</label>
+										<textarea name="descricao_projeto[]" class="form-control" cols="30" rows="5"
+											placeholder="Descreva em breves palavras o seu projeto"></textarea>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="row justify-content-center text-center mt-3">
+						<a class="btn btn-primary" onclick="addCampo('projeto')">Adicionar Projeto</a>
+					</div>
+				</div>
+			</div>
+
+			<div class="bloco bloco-alternado">
+				<div class="container my-3">
+					<div class="row">
+						<div class="col-12 text-center">
+							<button class="btn btn-success mb-2" name="tipo_curriculo" value="visualizar" type="submit"><i class="fas fa-file-pdf"></i> Visualizar currículo</button>
+							<button class="btn btn-primary mb-2" name="tipo_curriculo" value="download" type="submit"><i class="fas fa-file-download"></i> Baixar currículo</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</form>
+	</section>
+
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+	<script src="js/jquery.mask.min.js"></script>
+	<script src="js/main.js"></script>
+</body>
+
+</html>

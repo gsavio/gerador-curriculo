@@ -1,0 +1,84 @@
+#curriculoGerado {
+  text-rendering: optimizeLegibility;
+}
+
+* {
+  font-size: 11pt;
+}
+
+header {
+  margin-bottom: 25px;
+}
+
+h1 {
+  font-size: 22pt;
+  font-weight: normal;
+  margin-bottom: 0;
+}
+
+h2 {
+  margin-top: 20px;
+  margin-bottom: 5px;
+  font-size: 10pt;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #666;
+}
+
+p {
+  margin: 0;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.primeira-linha {
+  width: 100%;
+}
+.primeira-linha div {
+  width: 50%;
+  float: left;
+  font-size: 14pt;
+  font-weight: bold;
+}
+.primeira-linha .endereco {
+  text-align: right;
+}
+
+.segunda-linha div {
+  width: 50%;
+  float: left;
+  font-size: 12pt;
+}
+.segunda-linha .email,
+.segunda-linha .telefone {
+  text-align: right;
+}
+.segunda-linha .telefone {
+  width: 100%;
+}
+
+.experiencias li {
+  margin-bottom: 20px;
+}
+.experiencias li .data-atuacao {
+  font-weight: lighter;
+  font-size: 10pt;
+  text-transform: uppercase;
+  color: #666;
+}
+.experiencias .ultima-experiencia {
+  margin-bottom: 0;
+}
+
+.projetos li {
+  margin-bottom: 20px;
+}
+.projetos li .projeto .url {
+  margin-top: 10px;
+}
+
+/*# sourceMappingURL=curriculo.css.map */

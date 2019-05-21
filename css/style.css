@@ -1,0 +1,66 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans");
+header {
+  background-color: #607D8B;
+  color: #fff;
+  padding: 25px 0;
+  text-align: center;
+}
+
+.bloco {
+  padding: 25px 0;
+}
+
+.bloco-alternado {
+  background-color: #e1e9ec;
+}
+
+.btn {
+  color: #fff !important;
+}
+
+.campo-extra {
+  animation-name: fadeIn;
+  animation-duration: 0.7s;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    background-color: #9fbeca;
+  }
+  to {
+    opacity: 1;
+    background-color: rgba(164, 187, 197, 0.15);
+  }
+}
+.idioma:not(:first-of-type),
+.curso:not(:first-of-type),
+.experiencia:not(:first-of-type),
+.projeto:not(:first-of-type) {
+  background-color: rgba(164, 187, 197, 0.15);
+  border-radius: 5px;
+  padding: 15px;
+  padding-right: 45px;
+  position: relative;
+  margin-top: 10px;
+}
+
+.excluir-campo {
+  background-color: #c2d1d8;
+  padding: 0 10px;
+  font-size: 22px;
+  border-radius: 0 5px 5px 0;
+  display: flex;
+  align-items: center;
+  position: absolute;
+  right: 0;
+  height: 100%;
+  top: 0;
+  transition: 0.2s;
+  cursor: pointer;
+}
+.excluir-campo:hover {
+  color: #636363;
+}
+
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,17 @@
+{
+    "name": "guilherme/gerador-curriculo",
+    "description": "Gerador de curriculo",
+    "type": "project",
+    "config": {
+        "php": "^5.6.1"
+    }, 
+    "require": {
+        "mpdf/mpdf": "^8.0"
+    },
+    "authors": [
+        {
+            "name": "Guilherme Sávio",
+            "email": "guilhermesavio96@gmail.com"
+        }
+    ]
+}
