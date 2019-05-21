@@ -9,3 +9,6 @@ ou
 ```console
 $ composer require mpdf/mpdf
 ```
+
+O currículo gerado possui esta formatação
+![Responsive Web Player for SHOUTCast](https://i.imgur.com/SDrEgFV.png)
