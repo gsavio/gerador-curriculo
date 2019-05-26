@@ -132,4 +132,4 @@ $mpdf->SetTitle($nome);
 $mpdf->SetAuthor($nome);
 $mpdf->WriteHTML($style, \Mpdf\HTMLParserMode::HEADER_CSS);
 $mpdf->WriteHTML($html, \Mpdf\HTMLParserMode::HTML_BODY);
-$mpdf->Output('Currículo - ' . $nome, $tipoCurriculo);
+$mpdf->Output('Currículo - ' . $nome . '.pdf', $tipoCurriculo);
